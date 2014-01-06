@@ -57,12 +57,14 @@ TARGET_QCOM_MEDIA_VARIANT := caf
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Audio
-BOARD_HAVE_NEW_QCOM_CSDCLIENT := true
 BOARD_USES_ALSA_AUDIO := true
+BOARD_USES_LEGACY_ALSA_AUDIO := true
 BOARD_USES_FLUENCE_FOR_VOIP := true
 BOARD_USES_FLUENCE_INCALL := true
+BOARD_HAVE_NEW_QCOM_CSDCLIENT := true
 BOARD_USES_SEPERATED_AUDIO_INPUT := true
 BOARD_USES_SEPERATED_VOICE_SPEAKER := true
+BOARD_USES_SEPERATED_HEADSET_MIC := true
 TARGET_USES_QCOM_COMPRESSED_AUDIO := true
 
 # Bluetooth
@@ -71,7 +73,8 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oppo/n1/bluetooth
 
 # Camera
-COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
+COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK -DNEEDS_VECTORIMPL_SYMBOLS
+USE_DEVICE_SPECIFIC_CAMERA := true
 BOARD_FIX_FACE_DETECTION_SCORE := true
 
 # GPS
@@ -141,36 +144,24 @@ BOARD_RECOVERY_SWIPE := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/oppo/n1/sepolicy
-BOARD_SEPOLICY_UNION += \
-    file_contexts \
-    genfs_contexts \
-    property_contexts \
-    te_macros \
-    bluetooth_loader.te \
-    bridge.te \
-    camera.te \
-    conn_init.te \
+BOARD_SEPOLICY_UNION := \
+    app.te \
+    bluetooth.te \
     device.te \
-    dhcp.te \
     domain.te \
     drmserver.te \
     file.te \
-    kickstart.te \
-    init.te \
+    file_contexts \
+    hci_init.te \
+    init_shell.te \
+    keystore.te \
     mediaserver.te \
-    mpdecision.te \
-    netmgrd.te \
-    property.te \
-    qmux.te \
+    kickstart.te \
     rild.te \
-    rmt.te \
-    sensors.te \
     surfaceflinger.te \
     system.te \
-    tee.te \
-    thermald.te \
     ueventd.te \
-    wpa_supplicant.te
+    wpa.te
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/oppo/n1
 

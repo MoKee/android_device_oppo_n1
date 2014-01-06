@@ -67,7 +67,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8960
+    camera-wrapper.msm8960
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -92,6 +92,7 @@ PRODUCT_COPY_FILES += \
 # Graphics
 PRODUCT_PACKAGES += \
     copybit.msm8960 \
+    memtrack.msm8960 \
     gralloc.msm8960 \
     hwcomposer.msm8960 \
     libgenlock \
