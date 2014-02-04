@@ -18,7 +18,7 @@
 -include device/oppo/apq8064-common/BoardConfigCommon.mk
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_n1_defconfig
+TARGET_KERNEL_CONFIG := mokee_n1_defconfig
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oppo/n1/bluetooth
