@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2013 The MoKee OpenSource Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
 -include device/oppo/apq8064-common/BoardConfigCommon.mk
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_n1_defconfig
+TARGET_KERNEL_CONFIG := mokee_n1_defconfig
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oppo/n1/bluetooth
@@ -27,8 +27,8 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oppo/n1/bluetooth
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 BOARD_FIX_FACE_DETECTION_SCORE := true
 
-# CM Hardware
-BOARD_HARDWARE_CLASS += device/oppo/n1/cmhw
+# MK Hardware
+BOARD_HARDWARE_CLASS += device/oppo/n1/mkhw
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 10485760
