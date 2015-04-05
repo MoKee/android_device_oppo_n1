@@ -18,7 +18,7 @@
 -include device/oppo/apq8064-common/BoardConfigCommon.mk
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_n1_defconfig
+TARGET_KERNEL_CONFIG := mokee_n1_defconfig
 
 # Includes
 TARGET_SPECIFIC_HEADER_PATH := device/oppo/n1/include
@@ -30,8 +30,8 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oppo/n1/bluetooth
 TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 BOARD_FIX_FACE_DETECTION_SCORE := true
 
-# CM Hardware
-BOARD_HARDWARE_CLASS += device/oppo/n1/cmhw
+# MK Hardware
+BOARD_HARDWARE_CLASS += device/oppo/n1/mkhw
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 10485760
